@@ -31,3 +31,8 @@ Thumbs.db
 # Databases
 *.db
 *.sqlite
+
+# User uploads (created locally on each machine)
+app/static/uploads/*
+!app/static/uploads/.gitkeep
+!app/static/uploads/**/.gitkeep
