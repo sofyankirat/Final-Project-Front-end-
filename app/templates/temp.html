@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team - {{ username }}</title>
     <meta name="description" content="Meet the team behind the Student Recommendation and Attendance System.">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/Logo_BR.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -267,9 +268,17 @@
             box-shadow: 0 0 24px rgba(79, 212, 255, 0.35);
         }
 
-        body.dark-mode .team-member-name { color: #e8f0ff; }
-        body.dark-mode .team-member-role { color: #4fd4ff; }
-        body.dark-mode .team-member-desc { color: #b8d4ff; }
+        body.dark-mode .team-member-name {
+            color: #e8f0ff;
+        }
+
+        body.dark-mode .team-member-role {
+            color: #4fd4ff;
+        }
+
+        body.dark-mode .team-member-desc {
+            color: #b8d4ff;
+        }
 
         body.dark-mode .team-member-link {
             background: rgba(79, 212, 255, 0.08);
@@ -360,7 +369,9 @@
                             <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                </polygon>
                             </svg>
                             <span class="sidebar-text">Recommendation</span>
                         </a>
@@ -411,8 +422,8 @@
                     <div class="sidebar-nav">
                         <button class="sidebar-item dark-mode-toggle" id="btnDarkMode">
                             <div class="toggle-icon-wrap">
-                                <svg class="sidebar-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                <svg class="sidebar-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <circle cx="12" cy="12" r="5"></circle>
                                     <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -424,8 +435,8 @@
                                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                                 </svg>
-                                <svg class="sidebar-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                <svg class="sidebar-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="18"
+                                    height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                                 </svg>
@@ -557,16 +568,30 @@
                         <div class="team-member-avatar">H</div>
                         <h3 class="team-member-name">Hassan</h3>
                         <p class="team-member-role">Backend Architect</p>
-                        <p class="team-member-desc">Ensures platform stability and performance. Hassan designs scalable architectures and manages system reliability.</p>
+                        <p class="team-member-desc">Ensures platform stability and performance. Hassan designs scalable
+                            architectures and manages system reliability.</p>
                         <div class="team-member-links">
-                            <a href="https://linkedin.com/in/hassan" target="_blank" rel="noopener noreferrer" class="team-member-link" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://linkedin.com/in/hassan" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
                             </a>
-                            <a href="https://github.com/hassan" target="_blank" rel="noopener noreferrer" class="team-member-link" title="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <a href="https://github.com/hassan" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
                             </a>
                             <a href="mailto:hassan@email.com" class="team-member-link" title="Email">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -577,16 +602,30 @@
                         <div class="team-member-avatar">A</div>
                         <h3 class="team-member-name">Ahmed</h3>
                         <p class="team-member-role">Data Scientist</p>
-                        <p class="team-member-desc">Develops intelligent recommendation algorithms. Ahmed focuses on data modeling and ML pipeline optimization.</p>
+                        <p class="team-member-desc">Develops intelligent recommendation algorithms. Ahmed focuses on
+                            data modeling and ML pipeline optimization.</p>
                         <div class="team-member-links">
-                            <a href="https://linkedin.com/in/ahmed" target="_blank" rel="noopener noreferrer" class="team-member-link" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://linkedin.com/in/ahmed" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
                             </a>
-                            <a href="https://github.com/ahmed" target="_blank" rel="noopener noreferrer" class="team-member-link" title="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <a href="https://github.com/ahmed" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
                             </a>
                             <a href="mailto:ahmed@email.com" class="team-member-link" title="Email">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -597,16 +636,30 @@
                         <div class="team-member-avatar">M</div>
                         <h3 class="team-member-name">Mariam</h3>
                         <p class="team-member-role">UX Designer</p>
-                        <p class="team-member-desc">Creates intuitive user experiences. Mariam designs beautiful interfaces and smooth user flows across the platform.</p>
+                        <p class="team-member-desc">Creates intuitive user experiences. Mariam designs beautiful
+                            interfaces and smooth user flows across the platform.</p>
                         <div class="team-member-links">
-                            <a href="https://linkedin.com/in/mariam" target="_blank" rel="noopener noreferrer" class="team-member-link" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://linkedin.com/in/mariam" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
                             </a>
-                            <a href="https://github.com/mariam" target="_blank" rel="noopener noreferrer" class="team-member-link" title="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <a href="https://github.com/mariam" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
                             </a>
                             <a href="mailto:mariam@email.com" class="team-member-link" title="Email">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -617,16 +670,30 @@
                         <div class="team-member-avatar">A</div>
                         <h3 class="team-member-name">Amr</h3>
                         <p class="team-member-role">AI Engineer</p>
-                        <p class="team-member-desc">Powers AI-driven features. Amr develops intelligent chatbots and natural language processing capabilities.</p>
+                        <p class="team-member-desc">Powers AI-driven features. Amr develops intelligent chatbots and
+                            natural language processing capabilities.</p>
                         <div class="team-member-links">
-                            <a href="https://linkedin.com/in/amr" target="_blank" rel="noopener noreferrer" class="team-member-link" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://linkedin.com/in/amr" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
                             </a>
-                            <a href="https://github.com/amr" target="_blank" rel="noopener noreferrer" class="team-member-link" title="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <a href="https://github.com/amr" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
                             </a>
                             <a href="mailto:amr@email.com" class="team-member-link" title="Email">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -637,16 +704,30 @@
                         <div class="team-member-avatar">S</div>
                         <h3 class="team-member-name">Salma</h3>
                         <p class="team-member-role">QA & Polish</p>
-                        <p class="team-member-desc">Ensures quality and consistency. Salma tests features thoroughly and polishes every detail for perfection.</p>
+                        <p class="team-member-desc">Ensures quality and consistency. Salma tests features thoroughly and
+                            polishes every detail for perfection.</p>
                         <div class="team-member-links">
-                            <a href="https://linkedin.com/in/salma" target="_blank" rel="noopener noreferrer" class="team-member-link" title="LinkedIn">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://linkedin.com/in/salma" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
                             </a>
-                            <a href="https://github.com/salma" target="_blank" rel="noopener noreferrer" class="team-member-link" title="GitHub">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                            <a href="https://github.com/salma" target="_blank" rel="noopener noreferrer"
+                                class="team-member-link" title="GitHub">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
                             </a>
                             <a href="mailto:salma@email.com" class="team-member-link" title="Email">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -657,297 +738,298 @@
     </div>
 
     <script>
-    /* ===== SIDEBAR ===== */
-    const sidebar = document.getElementById('dashSidebar');
-    const toggleBtn = document.getElementById('sidebarToggle');
-    if (toggleBtn) toggleBtn.addEventListener('click', () => sidebar.classList.toggle('collapsed'));
+        /* ===== SIDEBAR ===== */
+        const sidebar = document.getElementById('dashSidebar');
+        const toggleBtn = document.getElementById('sidebarToggle');
+        if (toggleBtn) toggleBtn.addEventListener('click', () => sidebar.classList.toggle('collapsed'));
 
-    /* ===== DARK MODE ===== */
-    const darkModeBtn = document.getElementById('btnDarkMode');
-    const darkModeText = darkModeBtn.querySelector('.sidebar-text');
-    const isDark = localStorage.getItem('theme') === 'dark';
-    if (isDark) {
-        document.body.classList.add('dark-mode');
-        darkModeText.textContent = 'Dark mode (on)';
-        darkModeBtn.classList.add('active');
-    }
-
-    let particlesContainer;
-    tsParticles.load('particles-bg', {
-        fpsLimit: 60,
-        particles: {
-            color: { value: isDark ? ['#e8c547','#ff6b35','#80706a'] : ['#ff6b35','#ffc5d0','#ffffff'] },
-            move: { enable: true, direction: 'top', random: true, speed: 0.6, straight: false },
-            number: { density: { enable: true, area: 800 }, value: 100 },
-            opacity: { value: { min: 0.2, max: 0.6 }, animation: { enable: true, speed: 0.8, minimumValue: 0.1 } },
-            shape: { type: 'circle' },
-            size: { value: { min: 2, max: 8 }, animation: { enable: true, speed: 1.5, minimumValue: 2 } }
-        },
-        detectRetina: true
-    }).then(c => { particlesContainer = c; });
-
-    darkModeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        const on = document.body.classList.contains('dark-mode');
-        localStorage.setItem('theme', on ? 'dark' : 'light');
-        darkModeText.textContent = on ? 'Dark mode (on)' : 'Dark mode (off)';
-        darkModeBtn.classList.toggle('active', on);
-        if (particlesContainer) {
-            particlesContainer.options.particles.color.value = on
-                ? ['#e8c547','#ff6b35','#80706a']
-                : ['#ff6b35','#ffc5d0','#ffffff'];
-            particlesContainer.refresh();
+        /* ===== DARK MODE ===== */
+        const darkModeBtn = document.getElementById('btnDarkMode');
+        const darkModeText = darkModeBtn.querySelector('.sidebar-text');
+        const isDark = localStorage.getItem('theme') === 'dark';
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+            darkModeText.textContent = 'Dark mode (on)';
+            darkModeBtn.classList.add('active');
         }
-        // Redraw arrow if one is active
-        if (activeIndex >= 0) drawArrow(activeIndex);
-    });
 
-    /* ===== POPUPS ===== */
-    function setupPopup(btnId, popupId) {
-        const btn = document.getElementById(btnId);
-        const popup = document.getElementById(popupId);
-        if (!btn || !popup) return;
-        btn.addEventListener('click', e => {
-            e.stopPropagation();
-            document.querySelectorAll('.header-popup.open').forEach(p => { if (p !== popup) p.classList.remove('open'); });
-            popup.classList.toggle('open');
+        let particlesContainer;
+        tsParticles.load('particles-bg', {
+            fpsLimit: 60,
+            particles: {
+                color: { value: isDark ? ['#e8c547', '#ff6b35', '#80706a'] : ['#ff6b35', '#ffc5d0', '#ffffff'] },
+                move: { enable: true, direction: 'top', random: true, speed: 0.6, straight: false },
+                number: { density: { enable: true, area: 800 }, value: 100 },
+                opacity: { value: { min: 0.2, max: 0.6 }, animation: { enable: true, speed: 0.8, minimumValue: 0.1 } },
+                shape: { type: 'circle' },
+                size: { value: { min: 2, max: 8 }, animation: { enable: true, speed: 1.5, minimumValue: 2 } }
+            },
+            detectRetina: true
+        }).then(c => { particlesContainer = c; });
+
+        darkModeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const on = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', on ? 'dark' : 'light');
+            darkModeText.textContent = on ? 'Dark mode (on)' : 'Dark mode (off)';
+            darkModeBtn.classList.toggle('active', on);
+            if (particlesContainer) {
+                particlesContainer.options.particles.color.value = on
+                    ? ['#e8c547', '#ff6b35', '#80706a']
+                    : ['#ff6b35', '#ffc5d0', '#ffffff'];
+                particlesContainer.refresh();
+            }
+            // Redraw arrow if one is active
+            if (activeIndex >= 0) drawArrow(activeIndex);
         });
-    }
-    setupPopup('headerBtnMsg', 'msgPopup');
-    setupPopup('headerBtnNotif', 'notifPopup');
-    document.addEventListener('click', () => document.querySelectorAll('.header-popup.open').forEach(p => p.classList.remove('open')));
 
-    /* ============================================================
-       CANVAS ARROW SYSTEM
-       - Full-page fixed canvas
-       - Smooth cubic bezier drawn from bottom-center of hovered letter
-         to top-center of the corresponding card
-       - Animated draw with a glowing trail and proper arrowhead
-    ============================================================ */
-    const canvas = document.getElementById('team-arrow-canvas');
-    const ctx = canvas.getContext('2d');
-
-    let activeIndex = -1;
-    let animProgress = 0;   // 0 → 1
-    let animRaf = null;
-    let animDir = 1;         // 1 = drawing in, -1 = fading out
-    const ANIM_SPEED = 0.035;
-
-    function resizeCanvas() {
-        canvas.width  = window.innerWidth;
-        canvas.height = window.innerHeight;
-        if (activeIndex >= 0) drawArrow(activeIndex);
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    function getCenterBottom(el) {
-        const r = el.getBoundingClientRect();
-        return { x: r.left + r.width / 2, y: r.bottom };
-    }
-
-    function getCenterTop(el) {
-        const r = el.getBoundingClientRect();
-        return { x: r.left + r.width / 2, y: r.top };
-    }
-
-    /**
-     * Get a point along a cubic bezier at parameter t (0..1)
-     */
-    function cubicBezier(p0, p1, p2, p3, t) {
-        const mt = 1 - t;
-        return {
-            x: mt*mt*mt*p0.x + 3*mt*mt*t*p1.x + 3*mt*t*t*p2.x + t*t*t*p3.x,
-            y: mt*mt*mt*p0.y + 3*mt*mt*t*p1.y + 3*mt*t*t*p2.y + t*t*t*p3.y
-        };
-    }
-
-    function cubicBezierTangent(p0, p1, p2, p3, t) {
-        const mt = 1 - t;
-        return {
-            x: 3*(mt*mt*(p1.x-p0.x) + 2*mt*t*(p2.x-p1.x) + t*t*(p3.x-p2.x)),
-            y: 3*(mt*mt*(p1.y-p0.y) + 2*mt*t*(p2.y-p1.y) + t*t*(p3.y-p2.y))
-        };
-    }
-
-    function drawArrow(index) {
-        const letters = document.querySelectorAll('.team-letter');
-        const cards   = document.querySelectorAll('.team-member-card');
-        if (!letters[index] || !cards[index]) return;
-
-        const darkMode = document.body.classList.contains('dark-mode');
-        const color    = darkMode ? '#4fd4ff' : '#ff6b35';
-        const glowColor= darkMode ? 'rgba(79,212,255,' : 'rgba(255,107,53,';
-
-        const src = getCenterBottom(letters[index]);
-        const dst = getCenterTop(cards[index]);
-
-        // Control points for a natural flowing S-curve
-        const dy = dst.y - src.y;
-        const dx = dst.x - src.x;
-
-        const cp1 = { x: src.x + dx * 0.1, y: src.y + dy * 0.45 };
-        const cp2 = { x: dst.x - dx * 0.1, y: dst.y - dy * 0.45 };
-
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        if (animProgress <= 0) return;
-
-        const t = Math.min(animProgress, 1);
-        const steps = 120;
-        const drawSteps = Math.floor(steps * t);
-
-        // Draw glow trail (thick, low opacity)
-        ctx.beginPath();
-        ctx.moveTo(src.x, src.y);
-        for (let i = 1; i <= drawSteps; i++) {
-            const tt = i / steps;
-            const pt = cubicBezier(src, cp1, cp2, dst, tt);
-            ctx.lineTo(pt.x, pt.y);
+        /* ===== POPUPS ===== */
+        function setupPopup(btnId, popupId) {
+            const btn = document.getElementById(btnId);
+            const popup = document.getElementById(popupId);
+            if (!btn || !popup) return;
+            btn.addEventListener('click', e => {
+                e.stopPropagation();
+                document.querySelectorAll('.header-popup.open').forEach(p => { if (p !== popup) p.classList.remove('open'); });
+                popup.classList.toggle('open');
+            });
         }
-        ctx.strokeStyle = glowColor + '0.18)';
-        ctx.lineWidth = 14;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        ctx.filter = `blur(6px)`;
-        ctx.stroke();
-        ctx.filter = 'none';
+        setupPopup('headerBtnMsg', 'msgPopup');
+        setupPopup('headerBtnNotif', 'notifPopup');
+        document.addEventListener('click', () => document.querySelectorAll('.header-popup.open').forEach(p => p.classList.remove('open')));
 
-        // Draw medium glow
-        ctx.beginPath();
-        ctx.moveTo(src.x, src.y);
-        for (let i = 1; i <= drawSteps; i++) {
-            const tt = i / steps;
-            const pt = cubicBezier(src, cp1, cp2, dst, tt);
-            ctx.lineTo(pt.x, pt.y);
+        /* ============================================================
+           CANVAS ARROW SYSTEM
+           - Full-page fixed canvas
+           - Smooth cubic bezier drawn from bottom-center of hovered letter
+             to top-center of the corresponding card
+           - Animated draw with a glowing trail and proper arrowhead
+        ============================================================ */
+        const canvas = document.getElementById('team-arrow-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let activeIndex = -1;
+        let animProgress = 0;   // 0 → 1
+        let animRaf = null;
+        let animDir = 1;         // 1 = drawing in, -1 = fading out
+        const ANIM_SPEED = 0.035;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            if (activeIndex >= 0) drawArrow(activeIndex);
         }
-        ctx.strokeStyle = glowColor + '0.3)';
-        ctx.lineWidth = 5;
-        ctx.filter = `blur(2px)`;
-        ctx.stroke();
-        ctx.filter = 'none';
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-        // Draw crisp line on top
-        ctx.beginPath();
-        ctx.moveTo(src.x, src.y);
-        for (let i = 1; i <= drawSteps; i++) {
-            const tt = i / steps;
-            const pt = cubicBezier(src, cp1, cp2, dst, tt);
-            ctx.lineTo(pt.x, pt.y);
+        function getCenterBottom(el) {
+            const r = el.getBoundingClientRect();
+            return { x: r.left + r.width / 2, y: r.bottom };
         }
-        ctx.strokeStyle = color;
-        ctx.lineWidth = 2.5;
-        ctx.setLineDash([]);
-        ctx.stroke();
 
-        // Draw origin dot (glowing circle at the letter bottom)
-        ctx.beginPath();
-        ctx.arc(src.x, src.y, 5, 0, Math.PI * 2);
-        ctx.fillStyle = color;
-        ctx.shadowColor = color;
-        ctx.shadowBlur = 12;
-        ctx.fill();
-        ctx.shadowBlur = 0;
+        function getCenterTop(el) {
+            const r = el.getBoundingClientRect();
+            return { x: r.left + r.width / 2, y: r.top };
+        }
 
-        // Draw arrowhead at the tip of the drawn line
-        if (drawSteps > 0) {
-            const tipT  = drawSteps / steps;
-            const tip   = cubicBezier(src, cp1, cp2, dst, tipT);
-            // Tangent slightly behind for stable direction
-            const behindT = Math.max(0, (drawSteps - 3) / steps);
-            const behind  = cubicBezier(src, cp1, cp2, dst, behindT);
+        /**
+         * Get a point along a cubic bezier at parameter t (0..1)
+         */
+        function cubicBezier(p0, p1, p2, p3, t) {
+            const mt = 1 - t;
+            return {
+                x: mt * mt * mt * p0.x + 3 * mt * mt * t * p1.x + 3 * mt * t * t * p2.x + t * t * t * p3.x,
+                y: mt * mt * mt * p0.y + 3 * mt * mt * t * p1.y + 3 * mt * t * t * p2.y + t * t * t * p3.y
+            };
+        }
 
-            const angle = Math.atan2(tip.y - behind.y, tip.x - behind.x);
-            const headLen = 14;
-            const headAngle = Math.PI / 6; // 30°
+        function cubicBezierTangent(p0, p1, p2, p3, t) {
+            const mt = 1 - t;
+            return {
+                x: 3 * (mt * mt * (p1.x - p0.x) + 2 * mt * t * (p2.x - p1.x) + t * t * (p3.x - p2.x)),
+                y: 3 * (mt * mt * (p1.y - p0.y) + 2 * mt * t * (p2.y - p1.y) + t * t * (p3.y - p2.y))
+            };
+        }
 
+        function drawArrow(index) {
+            const letters = document.querySelectorAll('.team-letter');
+            const cards = document.querySelectorAll('.team-member-card');
+            if (!letters[index] || !cards[index]) return;
+
+            const darkMode = document.body.classList.contains('dark-mode');
+            const color = darkMode ? '#4fd4ff' : '#ff6b35';
+            const glowColor = darkMode ? 'rgba(79,212,255,' : 'rgba(255,107,53,';
+
+            const src = getCenterBottom(letters[index]);
+            const dst = getCenterTop(cards[index]);
+
+            // Control points for a natural flowing S-curve
+            const dy = dst.y - src.y;
+            const dx = dst.x - src.x;
+
+            const cp1 = { x: src.x + dx * 0.1, y: src.y + dy * 0.45 };
+            const cp2 = { x: dst.x - dx * 0.1, y: dst.y - dy * 0.45 };
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (animProgress <= 0) return;
+
+            const t = Math.min(animProgress, 1);
+            const steps = 120;
+            const drawSteps = Math.floor(steps * t);
+
+            // Draw glow trail (thick, low opacity)
             ctx.beginPath();
-            ctx.moveTo(tip.x, tip.y);
-            ctx.lineTo(
-                tip.x - headLen * Math.cos(angle - headAngle),
-                tip.y - headLen * Math.sin(angle - headAngle)
-            );
-            ctx.lineTo(
-                tip.x - headLen * Math.cos(angle + headAngle),
-                tip.y - headLen * Math.sin(angle + headAngle)
-            );
-            ctx.closePath();
+            ctx.moveTo(src.x, src.y);
+            for (let i = 1; i <= drawSteps; i++) {
+                const tt = i / steps;
+                const pt = cubicBezier(src, cp1, cp2, dst, tt);
+                ctx.lineTo(pt.x, pt.y);
+            }
+            ctx.strokeStyle = glowColor + '0.18)';
+            ctx.lineWidth = 14;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.filter = `blur(6px)`;
+            ctx.stroke();
+            ctx.filter = 'none';
+
+            // Draw medium glow
+            ctx.beginPath();
+            ctx.moveTo(src.x, src.y);
+            for (let i = 1; i <= drawSteps; i++) {
+                const tt = i / steps;
+                const pt = cubicBezier(src, cp1, cp2, dst, tt);
+                ctx.lineTo(pt.x, pt.y);
+            }
+            ctx.strokeStyle = glowColor + '0.3)';
+            ctx.lineWidth = 5;
+            ctx.filter = `blur(2px)`;
+            ctx.stroke();
+            ctx.filter = 'none';
+
+            // Draw crisp line on top
+            ctx.beginPath();
+            ctx.moveTo(src.x, src.y);
+            for (let i = 1; i <= drawSteps; i++) {
+                const tt = i / steps;
+                const pt = cubicBezier(src, cp1, cp2, dst, tt);
+                ctx.lineTo(pt.x, pt.y);
+            }
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2.5;
+            ctx.setLineDash([]);
+            ctx.stroke();
+
+            // Draw origin dot (glowing circle at the letter bottom)
+            ctx.beginPath();
+            ctx.arc(src.x, src.y, 5, 0, Math.PI * 2);
             ctx.fillStyle = color;
             ctx.shadowColor = color;
-            ctx.shadowBlur = 16;
+            ctx.shadowBlur = 12;
             ctx.fill();
             ctx.shadowBlur = 0;
+
+            // Draw arrowhead at the tip of the drawn line
+            if (drawSteps > 0) {
+                const tipT = drawSteps / steps;
+                const tip = cubicBezier(src, cp1, cp2, dst, tipT);
+                // Tangent slightly behind for stable direction
+                const behindT = Math.max(0, (drawSteps - 3) / steps);
+                const behind = cubicBezier(src, cp1, cp2, dst, behindT);
+
+                const angle = Math.atan2(tip.y - behind.y, tip.x - behind.x);
+                const headLen = 14;
+                const headAngle = Math.PI / 6; // 30°
+
+                ctx.beginPath();
+                ctx.moveTo(tip.x, tip.y);
+                ctx.lineTo(
+                    tip.x - headLen * Math.cos(angle - headAngle),
+                    tip.y - headLen * Math.sin(angle - headAngle)
+                );
+                ctx.lineTo(
+                    tip.x - headLen * Math.cos(angle + headAngle),
+                    tip.y - headLen * Math.sin(angle + headAngle)
+                );
+                ctx.closePath();
+                ctx.fillStyle = color;
+                ctx.shadowColor = color;
+                ctx.shadowBlur = 16;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
         }
-    }
 
-    function animateIn(index) {
-        cancelAnimationFrame(animRaf);
-        animDir = 1;
+        function animateIn(index) {
+            cancelAnimationFrame(animRaf);
+            animDir = 1;
 
-        // Snap back to 0 for a fresh draw if switching letters
-        if (activeIndex !== index) animProgress = 0;
-        activeIndex = index;
+            // Snap back to 0 for a fresh draw if switching letters
+            if (activeIndex !== index) animProgress = 0;
+            activeIndex = index;
 
-        canvas.classList.add('visible');
+            canvas.classList.add('visible');
 
-        function tick() {
-            animProgress += ANIM_SPEED;
-            if (animProgress >= 1) {
-                animProgress = 1;
+            function tick() {
+                animProgress += ANIM_SPEED;
+                if (animProgress >= 1) {
+                    animProgress = 1;
+                    drawArrow(index);
+                    return;
+                }
                 drawArrow(index);
-                return;
+                animRaf = requestAnimationFrame(tick);
             }
-            drawArrow(index);
-            animRaf = requestAnimationFrame(tick);
+            tick();
         }
-        tick();
-    }
 
-    function animateOut() {
-        cancelAnimationFrame(animRaf);
-        animDir = -1;
+        function animateOut() {
+            cancelAnimationFrame(animRaf);
+            animDir = -1;
 
-        function tick() {
-            animProgress -= ANIM_SPEED * 1.8;
-            if (animProgress <= 0) {
-                animProgress = 0;
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                canvas.classList.remove('visible');
-                activeIndex = -1;
-                return;
+            function tick() {
+                animProgress -= ANIM_SPEED * 1.8;
+                if (animProgress <= 0) {
+                    animProgress = 0;
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    canvas.classList.remove('visible');
+                    activeIndex = -1;
+                    return;
+                }
+                drawArrow(activeIndex);
+                animRaf = requestAnimationFrame(tick);
             }
-            drawArrow(activeIndex);
-            animRaf = requestAnimationFrame(tick);
+            tick();
         }
-        tick();
-    }
 
-    /* ===== HOOK UP LETTERS ===== */
-    document.querySelectorAll('.team-letter').forEach((letter, i) => {
-        const cards = document.querySelectorAll('.team-member-card');
-        const letters = document.querySelectorAll('.team-letter');
+        /* ===== HOOK UP LETTERS ===== */
+        document.querySelectorAll('.team-letter').forEach((letter, i) => {
+            const cards = document.querySelectorAll('.team-member-card');
+            const letters = document.querySelectorAll('.team-letter');
 
-        letter.addEventListener('mouseenter', () => {
-            // Reset all
-            letters.forEach(l => l.classList.remove('active'));
-            cards.forEach(c => c.classList.remove('active'));
+            letter.addEventListener('mouseenter', () => {
+                // Reset all
+                letters.forEach(l => l.classList.remove('active'));
+                cards.forEach(c => c.classList.remove('active'));
 
-            letter.classList.add('active');
-            cards[i].classList.add('active');
-            animateIn(i);
+                letter.classList.add('active');
+                cards[i].classList.add('active');
+                animateIn(i);
+            });
+
+            letter.addEventListener('mouseleave', () => {
+                letter.classList.remove('active');
+                cards[i].classList.remove('active');
+                animateOut();
+            });
         });
 
-        letter.addEventListener('mouseleave', () => {
-            letter.classList.remove('active');
-            cards[i].classList.remove('active');
-            animateOut();
-        });
-    });
-
-    /* Redraw on scroll (canvas is fixed so coords stay correct) */
-    window.addEventListener('scroll', () => {
-        if (activeIndex >= 0) drawArrow(activeIndex);
-    }, { passive: true });
+        /* Redraw on scroll (canvas is fixed so coords stay correct) */
+        window.addEventListener('scroll', () => {
+            if (activeIndex >= 0) drawArrow(activeIndex);
+        }, { passive: true });
     </script>
 </body>
+
 </html>
