@@ -73,6 +73,68 @@ HELP_RECEIVER_EMAIL=www.sofyankirat123@gmail.com
 
 Make sure MySQL Server is running. The app creates the database tables automatically on first launch.
 
+## If MySQL is not installed on the machine
+
+This project needs MySQL to run fully. If MySQL is missing, follow these steps:
+
+### Option A: Install MySQL Community Server
+
+1. Download MySQL Community Server from:
+   https://dev.mysql.com/downloads/mysql/
+2. Install it on the machine.
+3. During setup, choose a root password and keep it safe.
+4. Make sure the MySQL service is running.
+5. Open MySQL Workbench or the MySQL command line.
+6. Create the database if needed:
+
+```sql
+CREATE DATABASE student_system;
+```
+
+7. Update the `.env` file with the correct MySQL details:
+
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_mysql_password
+DB_NAME=student_system
+```
+
+8. Run the project:
+
+```bash
+python app.py
+```
+
+### Option B: Install XAMPP and use its MySQL
+
+1. Download XAMPP from:
+   https://www.apachefriends.org/
+2. Install XAMPP.
+3. Open the XAMPP Control Panel.
+4. Start **MySQL**.
+5. Open phpMyAdmin in the browser:
+
+```text
+http://localhost/phpmyadmin
+```
+
+6. Create the database `student_system`.
+7. Put the XAMPP MySQL settings into `.env`.
+8. Run the Flask app with `python app.py`.
+
+### Option C: If you do not want to install MySQL at all
+
+The project will not work fully without a database server. In that case, the code must be converted from MySQL to SQLite before it can run on a machine with no MySQL installation.
+
+SQLite is easier for beginners because:
+
+- it does not need a separate server
+- it works with built-in Python tools
+- it is easier to run on any machine
+
+If you want the project to work without MySQL, the database layer must be changed first.
+
 ### 6) Run the app
 
 ```bash
