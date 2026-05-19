@@ -15,6 +15,7 @@ from email.mime.multipart import MIMEMultipart
 from functools import wraps
 import os
 import base64
+import binascii
 import json
 from typing import Any, cast
 from dotenv import load_dotenv  # type: ignore[import]
@@ -1257,7 +1258,7 @@ def attendance_enroll():
         _, encoded = data_url.split(',', 1)
         try:
             image_bytes = base64.b64decode(encoded)
-        except (ValueError, base64.binascii.Error):
+        except (ValueError, binascii.Error):
             return jsonify({'success': False, 'message': 'Could not decode image data.'}), 400
 
         filename = f'{timestamp}_{index}_{safe_label}.jpg'
