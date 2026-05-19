@@ -1193,6 +1193,90 @@ def upload_ai_chat_attachment():
         return jsonify({'success': False, 'message': 'Failed to upload attachment'}), 500
 
 
+@app.route('/attendance')
+@login_required
+def attendance():
+    """Smart Attendance enrollment page"""
+    user_id = to_int_value(session.get('user_id'))
+    email = session.get('email', '')
+    username = email.split('@')[0].capitalize() if email else 'User'
+    try:
+        connection = get_db_connection()
+        if connection:
+            cursor = connection.cursor()
+            cursor.execute("SELECT first_name FROM user_additional_info WHERE user_id = %s", (user_id,))
+            result = cursor.fetchone()
+            if result and result[0]:
+                username = result[0]
+            cursor.close()
+            connection.close()
+    except Exception as e:
+        print(f"Error fetching user name: {e}")
+    return render_template('attendance.html', username=username, email=email,
+                           profile_photo=_get_profile_photo(user_id))
+
+
+@app.route('/api/attendance/enroll', methods=['POST'])
+@login_required
+def attendance_enroll():
+    """Accept five enrollment captures from the web UI."""
+    payload = request.get_json(silent=True) or {}
+    captures = payload.get('captures', [])
+
+    if not isinstance(captures, list) or len(captures) != 5:
+        return jsonify({'success': False, 'message': 'Please send exactly 5 captures.'}), 400
+
+    user_id = to_int_value(session.get('user_id'))
+    static_root = get_static_root()
+    upload_dir = os.path.join(static_root, 'uploads', 'attendance', f'user_{user_id}')
+    os.makedirs(upload_dir, exist_ok=True)
+
+    attendance_root = os.path.abspath(os.path.join(BASE_DIR, '..', 'Smart-Attendance-System'))
+    export_dir = os.path.join(attendance_root, 'database', 'web_enrollments', f'user_{user_id}')
+    try:
+        os.makedirs(export_dir, exist_ok=True)
+    except OSError:
+        export_dir = ''
+
+    saved_files = []
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+
+    for index, entry in enumerate(captures, start=1):
+        if not isinstance(entry, dict):
+            return jsonify({'success': False, 'message': 'Capture payload format is invalid.'}), 400
+
+        data_url = to_clean_string(entry.get('dataUrl'))
+        label = to_clean_string(entry.get('label', f'position_{index}'))
+        if not data_url.startswith('data:image/') or ',' not in data_url:
+            return jsonify({'success': False, 'message': 'Capture image data is invalid.'}), 400
+
+        safe_label = ''.join(ch for ch in label.lower() if ch.isalnum() or ch in ('-', '_'))
+        if not safe_label:
+            safe_label = f'position_{index}'
+
+        _, encoded = data_url.split(',', 1)
+        try:
+            image_bytes = base64.b64decode(encoded)
+        except (ValueError, base64.binascii.Error):
+            return jsonify({'success': False, 'message': 'Could not decode image data.'}), 400
+
+        filename = f'{timestamp}_{index}_{safe_label}.jpg'
+        file_path = os.path.join(upload_dir, filename)
+        with open(file_path, 'wb') as file_handle:
+            file_handle.write(image_bytes)
+        saved_files.append(filename)
+
+        if export_dir:
+            export_path = os.path.join(export_dir, filename)
+            try:
+                with open(export_path, 'wb') as export_handle:
+                    export_handle.write(image_bytes)
+            except OSError:
+                pass
+
+    return jsonify({'success': True, 'files': saved_files})
+
+
 # ================== ERROR HANDLERS ==================
 
 @app.errorhandler(404)
